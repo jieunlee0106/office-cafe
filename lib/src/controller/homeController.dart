@@ -66,7 +66,7 @@ class HomeController extends GetxController {
     try {
       final response = await dio.get(
         'http://192.168.100.157:9090/api/v1/ilsung/cafe/order/cart',
-        queryParameters: {'deviceId': "지은은"},
+        queryParameters: {'deviceId': "지은은은"},
       );
       print(response);
       return response.data;

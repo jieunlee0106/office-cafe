@@ -11,32 +11,38 @@ class Cart extends StatefulWidget {
 }
 
 class _CartState extends State<Cart> {
-  late SelectedModel selectedModel;
+  final SelectedModel selectedModel;
   final controller = Get.put(HomeController());
-  bool _isLoading = true;
-  Future<void> getCartList() async {
-    await controller.getCartList(deviceId: "지은은");
-    selectedModel = controller.selectedModel;
-    print(selectedModel.drinks);
-  }
 
-  Future<void> loadData() async {
-    await controller.getCartList(deviceId: "지은은");
-    selectedModel = controller.selectedModel;
-    setState(() {
-      _isLoading = false;
-    });
-  }
+  // bool _isLoading = true;
+  // Future<void> getCartList() async {
+  //   await controller.getCartList(deviceId: "지은은");
+  //   selectedModel = controller.selectedModel;
+  //   print(selectedModel.drinks);
+  // }
 
-  @override
-  void initState() {
-    super.initState();
-    loadData();
-    getCartList();
-  }
+  // Future<void> loadData() async {
+  //   selectedModel = controller.selectedModel;
+  //   print('!!!!!!!!!!!!!!!!!');
+  //   setState(() {
+  //     _isLoading = false;
+  //   });
+  // }
+
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   loadData();
+  //   getCartList();
+  // }
 
   @override
   Widget build(BuildContext context) {
+    // if (_isLoading) {
+    //   return Center(
+    //     child: CircularProgressIndicator(),
+    //   );
+    // } else {
     return Scaffold(
       appBar: AppBar(
         title: Text('Cart'),
@@ -64,3 +70,4 @@ class _CartState extends State<Cart> {
     );
   }
 }
+// }
